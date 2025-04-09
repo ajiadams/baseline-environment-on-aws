@@ -4,7 +4,7 @@
     "dev": {
       "description": "Context samples for Dev - Anonymous account & region",
       "envName": "Development",
-      "securityNotifyEmail": "notify-security@example.com",
+      "securityNotifyEmail": "1109f389.ajinomoto.com@jp.teams.ms",
       "slackNotifier": {
         "workspaceId": "T8XXXXXXX",
         "channelIdSec": "C00XXXXXXXX"
