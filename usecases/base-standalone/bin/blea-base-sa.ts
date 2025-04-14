@@ -53,6 +53,7 @@ const trail = new BLEATrailStack(app, `${pjPrefix}-Trail`, { env: getProcEnv() }
 const secAlarm = new BLEASecurityAlarmStack(app, `${pjPrefix}-SecurityAlarm`, {
   notifyEmail: envVals['securityNotifyEmail'],
   cloudTrailLogGroupName: trail.cloudTrailLogGroup.logGroupName,
+  unauthorizedAttemptsLogPatternString: envVals['securityAlarm']['unauthorizedAttempts']['logPatternString'],
   env: getProcEnv(),
 });
 
