@@ -11,7 +11,7 @@ import { aws_events_targets as cwet } from 'aws-cdk-lib';
 interface BLEASecurityAlarmStackProps extends cdk.StackProps {
   notifyEmail: string;
   cloudTrailLogGroupName: string;
-  unauthorizedAttemptsLogPatternString?: string;
+  unauthorizedAttemptsLogPatternString: string;
 }
 
 export class BLEASecurityAlarmStack extends cdk.Stack {
@@ -184,7 +184,7 @@ export class BLEASecurityAlarmStack extends cdk.Stack {
       filterPattern: {
         // Exclude calls “Decrypt" event by config.amazonaws.com to ignore innocuous errors caused by AWS Config.
         // That error occurs if you have KMS (CMK) encrypted environment variables in Lambda function.
-        logPatternString: props.unauthorizedAttemptsLogPatternString ?? '',
+        logPatternString: props.unauthorizedAttemptsLogPatternString,
       },
       metricNamespace: 'CloudTrailMetrics',
       metricName: 'UnauthorizedAttemptsEventCount',
