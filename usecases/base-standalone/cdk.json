@@ -5,6 +5,11 @@
       "description": "Context samples for Dev - Anonymous account & region",
       "envName": "Development",
       "securityNotifyEmail": "1109f389.ajinomoto.com@jp.teams.ms",
+      "securityAlarm": {
+        "unauthorizedAttempts": {
+          "logPatternString": "{($.errorCode = \"*UnauthorizedOperation\" || $.errorCode = \"AccessDenied*\") && ($.eventName != \"Decrypt\" || $.userIdentity.invokedBy != \"config.amazonaws.com\" ) && ($.userIdentity.arn != \"arn:aws:sts::207898528713:assumed-role/cdk-avc-sp-api-fetcher-de-avclamndaexecutionroleaw2-La1crClK4zim/cdk-avc-sp-api-fetcher-de-reportcreationwaitinglam-2HWDYOmMxz2X\")}"
+        }
+      },
       "slackNotifier": {
         "workspaceId": "T8XXXXXXX",
         "channelIdSec": "C00XXXXXXXX"
@@ -18,6 +23,11 @@
       },
       "envName": "Staging",
       "securityNotifyEmail": "notify-security@example.com",
+      "securityAlarm": {
+        "unauthorizedAttempts": {
+          "logPatternString": "{($.errorCode = \"*UnauthorizedOperation\" || $.errorCode = \"AccessDenied*\") && ($.eventName != \"Decrypt\" || $.userIdentity.invokedBy != \"config.amazonaws.com\" )}"
+        }
+      },
       "slackNotifier": {
         "workspaceId": "T8XXXXXXX",
         "channelIdSec": "C01XXXXXXXX"
@@ -31,6 +41,11 @@
       },
       "envName": "Production",
       "securityNotifyEmail": "notify-security@example.com",
+      "securityAlarm": {
+        "unauthorizedAttempts": {
+          "logPatternString": "{($.errorCode = \"*UnauthorizedOperation\" || $.errorCode = \"AccessDenied*\") && ($.eventName != \"Decrypt\" || $.userIdentity.invokedBy != \"config.amazonaws.com\" )}"
+        }
+      },
       "slackNotifier": {
         "workspaceId": "T8XXXXXXX",
         "channelIdSec": "C02XXXXXXXX"
