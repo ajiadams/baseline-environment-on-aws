@@ -40,7 +40,7 @@
         "region": "ap-northeast-1"
       },
       "envName": "Production",
-      "securityNotifyEmail": "notify-security@example.com",
+      "securityNotifyEmail": "1109f389.ajinomoto.com@jp.teams.ms",
       "securityAlarm": {
         "unauthorizedAttempts": {
           "logPatternString": "{($.errorCode = \"*UnauthorizedOperation\" || $.errorCode = \"AccessDenied*\") && ($.eventName != \"Decrypt\" || $.userIdentity.invokedBy != \"config.amazonaws.com\" )}"
