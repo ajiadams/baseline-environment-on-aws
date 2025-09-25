@@ -23,7 +23,8 @@ export class BLEAConfigRulesStack extends cdk.Stack {
     const rmDefaultSgRole = new iam.Role(this, 'RemoveSecGroupRemediationRole', {
       assumedBy: new iam.ServicePrincipal('ssm.amazonaws.com'),
       path: '/',
-      managedPolicies: [{ managedPolicyArn: 'arn:aws:iam::aws:policy/service-role/AmazonSSMAutomationRole' }],
+      //managedPolicies: [{ managedPolicyArn: 'arn:aws:iam::aws:policy/service-role/AmazonSSMAutomationRole' }],
+      managedPolicies: [iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AmazonSSMAutomationRole')],
     });
     rmDefaultSgRole.addToPolicy(
       new iam.PolicyStatement({
